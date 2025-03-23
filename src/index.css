@@ -1,0 +1,64 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  background-color: #121212; /* Default dark background */
+  color: #fff; /* Default text color */
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden; /* Keep this */
+}
+
+/* Ensure main container fills the screen */
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #121212; /* Dark background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00F050; /* Green scrollbar */
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00C040; /* Darker green on hover */
+}
+
+/* Light Mode Styles */
+.light-mode {
+  background-color: #f4f4f4; /* Light background */
+  color: #333; /* Dark text */
+}
+
+.light-mode ::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Light background */
+}
+
+.light-mode ::-webkit-scrollbar-thumb {
+  background: #00F050; /* Green scrollbar */
+}
+
+.light-mode ::-webkit-scrollbar-thumb:hover {
+  background: #00C040; /* Darker green on hover */
+}
+
+.projects-grid {
+  overflow-x: auto !important; /* Ensure scrolling works */
+}

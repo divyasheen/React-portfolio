@@ -1,0 +1,22 @@
+/* Footer Container */
+.footer-container {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: #121212; /* Default dark background, same as navbar */
+  color: white; /* Default text color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+.footer-container.dark-mode {
+  background-color: #121212; /* Dark footer background */
+  color: white;
+}
+
+/* Light Mode */
+.footer-container.light-mode {
+  background-color: #f4f4f4; /* Light footer background */
+  color: #333;
+}

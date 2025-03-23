@@ -1,0 +1,170 @@
+/* About Container */
+.about-container {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #000; /* Black background by default */
+  color: #fff; /* White text for contrast */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.about-container.light-mode {
+  background-color: #f4f4f4; /* Light background for light mode */
+  color: #333; /* Dark text for light mode */
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white for dark mode */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow for dark mode */
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-container.light-mode .about-content {
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white for light mode */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Lighter shadow for light mode */
+}
+
+/* Styling for h2 */
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00F050; /* Purple color for h2 */
+  font-weight: 700; /* Bold font weight */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 2px; /* Spacing between letters */
+  position: relative; /* For the underline effect */
+}
+
+.about-content h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #00F050; /* Purple underline */
+  margin: 10px auto 0; /* Center the underline */
+}
+
+/* Styling for h3 */
+.about-content h3 {
+  font-size: 1.8rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #00F050; /* Purple color for h3 */
+  font-weight: 600; /* Semi-bold font weight */
+  text-transform: capitalize; /* Capitalize text */
+  letter-spacing: 1px; /* Spacing between letters */
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  margin: 20px 0;
+  line-height: 1.8;
+  color: inherit;
+}
+
+/* Timeline Styling */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #00F050; /* Purple timeline line */
+  left: 50%;
+  margin-left: -2px;
+  z-index: 1; /* Ensure the line is behind the content */
+}
+
+.timeline-item {
+  padding: 20px 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+  padding-right: 60px; /* Add padding to avoid text overlapping the line */
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+  padding-left: 60px; /* Add padding to avoid text overlapping the line */
+}
+
+.timeline-year {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00F050; /* Purple color for year */
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2; /* Ensure the year is above the timeline line */
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background for content */
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2; /* Ensure the content is above the timeline line */
+}
+
+.timeline-content h4 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #00F050; /* Purple color for heading */
+}
+
+.timeline-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: inherit;
+}
+/* Skills Styling */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.skill-tag {
+  background-color: black; /* Purple background for skill tags */
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.skill-tag:hover {
+  background-color: #00F050; /* Darker purple on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Light mode specific styles for skill tags */
+.about-container.light-mode .skill-tag {
+  background-color: #00F050; /* Darker purple for light mode */
+}
+
+.about-container.light-mode .skill-tag:hover {
+  background-color: #00F050; /* Lighter purple on hover in light mode */
+}
