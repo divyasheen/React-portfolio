@@ -17,23 +17,11 @@
   color: black; /* Text color for light mode */
 }
 
-/* Hero Subtitle */
-.hero-subtitle {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  color: #aaa;
-  display: inline-flex; /* Use inline-flex to align text in a row */
-  align-items: center;  /* Vertically center align the text */
+/* Home content */
+.home-content {
+  position: relative;
+  z-index: 1;
 }
-.hero-subtitle.light-mode {
-  color: #333; /* Darker subtitle text in light mode */
-}
-/* Fixed "I am a" text */
-.fixed-text {
-  display: inline; /* Ensure it stays on the same line as the TextTransition */
-  margin-right: 10px;
-}
-
 
 /* Hero Title */
 .hero-title {
@@ -45,61 +33,64 @@
   gap: 10px;
 }
 
-/* Purple Accent Color */
+/* Hero Subtitle */
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #aaa;
+  display: inline-flex; /* Use inline-flex to align text in a row */
+  align-items: center; /* Vertically center align the text */
+}
+
+.hero-subtitle.light-mode {
+  color: #333; /* Darker subtitle text in light mode */
+}
+
+/* Fixed "I am a" text */
+.fixed-text {
+  display: inline; /* Ensure it stays on the same line as the TextTransition */
+  margin-right: 10px;
+}
+
+
 .highlight {
-  color:#00F050;
+  color: #00f050;
 }
 
 .highlight.light-mode {
-  color: #00F050; /* Accent color for light mode */
+  color: #00f050; /* Accent color for light mode */
 }
 
-/* Stars animation */
-@keyframes glitter {
-  0%, 100% {
-      opacity: 0.3;
-      transform: scale(1);
-  }
-  50% {
-      opacity: 1;
-      transform: scale(1.2);
-  }
-}
 
-.star {
+/* Right-side Experience Section */
+.experience-section {
   position: absolute;
-  width: 3px;
-  height: 3px;
-  background-color: white;
-  border-radius: 50%;
-  opacity: 0.3;
-  animation: glitter 2s infinite alternate;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1;
 }
 
-.star.light-mode {
-  background-color: black; /* Lighter stars for light mode */
+.experience-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none; /* Remove background */
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
-/* Wave animation for the wave emoji */
-@keyframes waveAnimation {
-  0% {
-      transform: rotate(0deg);
-  }
-  25% {
-      transform: rotate(15deg);
-  }
-  50% {
-      transform: rotate(0deg);
-  }
-  75% {
-      transform: rotate(-15deg);
-  }
-  100% {
-      transform: rotate(0deg);
-  }
+.experience-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00f050; /* Green color */
 }
 
-.wave {
-  display: inline-block;
-  animation: waveAnimation 1s infinite;
+.experience-text {
+  font-size: 0.9rem;
+  color: #aaa;
 }
+

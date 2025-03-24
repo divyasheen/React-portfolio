@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/about.css"; // You can style it in this file
+import "../styles/about.css"; 
 
 function About({ darkMode }) {
   return (
@@ -7,12 +7,12 @@ function About({ darkMode }) {
       <div className="about-content">
         <h2>About Me</h2>
         <p>
-          My approach focuses on creating scalable, high-performing solutions tailored to both user needs and business objectives. By prioritizing performance, accessibility, and responsiveness, I strive to deliver experiences that not only engage users but also drive tangible results.
+          I believe in a user centered design approach,ensuring that every project I work on is tailored to meet the specific needs of its users.I love what I do! By prioritizing performance, accessibility, and responsiveness, I strive to deliver experiences that not only engage users but also drive tangible results.
         </p>
 
         <h3>Timeline</h3>
         <div className="timeline">
-          {/* Latest Entry First */}
+       
           <div className="timeline-item">
             <div className="timeline-year">2024 - 2025</div>
             <div className="timeline-content">

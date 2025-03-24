@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 1000; /* Ensures navbar stays above other elements */
+  z-index: 1000; 
 }
 
 /* Light Mode Styling */
@@ -22,7 +22,7 @@
   width: 100%;
   max-width: 1200px;
   justify-content: space-between;
-  position: relative; /* Ensures child positioning works properly */
+  position: relative; 
 }
 
 /* Logo */
@@ -80,8 +80,8 @@
   /* Fix positioning */
   position: absolute;
   top: 50%;
-  left: 85rem; /* Adjusted to ensure spacing from right */
-  transform: translateY(-50%); /* Center vertically */
+  left: 85rem; 
+  transform: translateY(-50%);
 }
 
 .theme-toggle:hover {

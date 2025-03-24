@@ -24,7 +24,7 @@
   opacity: 0.8;
 }
 
-/* 📌 Contact Cards Layout */
+
 .contact-cards {
   display: flex;
   justify-content: center;
@@ -34,7 +34,7 @@
   margin: auto;
 }
 
-/* 🟢 Contact Card - Glassmorphism Effect */
+
 .contact-card {
   width: 180px;
   height: 180px;
@@ -65,7 +65,7 @@
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-/* 🟣 Icons */
+
 .contact-icon {
   font-size: 2.5rem;
   color: #00F050;
@@ -96,7 +96,7 @@
   color: #00F050;
 }
 
-/* 🌍 Responsive Design */
+
 @media (max-width: 768px) {
   .contact-cards {
       flex-direction: column;

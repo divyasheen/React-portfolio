@@ -13,13 +13,12 @@ html, body {
   color: #fff; /* Default text color */
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  overflow-x: hidden; /* Keep this */
 }
 
-/* Ensure main container fills the screen */
 .app-container {
   width: 100%;
   min-height: 100vh;
+  overflow-x: hidden; /* Ensure no horizontal overflow */
 }
 
 /* Custom Scrollbar */
@@ -32,13 +31,13 @@ html, body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00F050; /* Green scrollbar */
+  background: #00f050; /* Green scrollbar */
   border-radius: 10px;
   transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00C040; /* Darker green on hover */
+  background: #00c040; /* Darker green on hover */
 }
 
 /* Light Mode Styles */
@@ -52,13 +51,39 @@ html, body {
 }
 
 .light-mode ::-webkit-scrollbar-thumb {
-  background: #00F050; /* Green scrollbar */
+  background: #00f050; /* Green scrollbar */
 }
 
 .light-mode ::-webkit-scrollbar-thumb:hover {
-  background: #00C040; /* Darker green on hover */
+  background: #00c040; /* Darker green on hover */
 }
 
-.projects-grid {
-  overflow-x: auto !important; /* Ensure scrolling works */
+/* Stars animation */
+@keyframes fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(50%) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%) scale(0.5);
+  }
+}
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: fall 5s infinite linear; /* Adjust duration for speed */
+}
+
+.star.light-mode {
+  background-color: green; /* Lighter stars for light mode */
 }

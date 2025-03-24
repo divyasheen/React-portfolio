@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import "../styles/contact.css"; // Import the updated CSS
+import "../styles/contact.css"; 
 
 function Contact({ darkMode }) {
   return (

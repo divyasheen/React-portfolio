@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import Navbar from "./components/Navbar"; // Corrected path for Navbar
-import Home from "./components/Home"; // Corrected path for Home
-import About from "./components/About"; // Importing the About component
-import Projects from "./components/Projects"; // Importing the Projects component
-import Contact from "./components/Contact"
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import "./styles/navbar.css"; // Corrected path for navbar.css
-import "./styles/home.css"; // Corrected path for home.css
-import "./styles/projects.css"; // Path for the new projects CSS
+import "./styles/navbar.css";
+import "./styles/home.css";
+import "./styles/projects.css";
 import "./styles/contact.css";
 import "./styles/footer.css";
 
@@ -18,10 +18,24 @@ function App() {
     setDarkMode((prevMode) => !prevMode);
   };
 
+  const stars = Array.from({ length: 100 }).map((_, i) => (
+    <div
+      key={i}
+      className={`star ${!darkMode ? "light-mode" : ""}`} // Apply light-mode class conditionally
+      style={{
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+        animationDuration: `${Math.random() * 5 + 2}s`, // Randomize duration
+        animationDelay: `${Math.random() * 5}s`, // Randomize delay
+      }}
+    ></div>
+  ));
+
   return (
     <div className={`app-container ${darkMode ? "dark-mode" : "light-mode"}`}>
+      {stars}
       <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
-      
+
       <div id="home">
         <Home darkMode={darkMode} />
       </div>
