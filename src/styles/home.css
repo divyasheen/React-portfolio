@@ -8,19 +8,22 @@
   justify-content: center;
   text-align: center;
   color: white;
-  background: #121212; /* Default background for dark mode */
+  background: #121212;
   overflow: hidden;
+  padding: 0 20px;
 }
 
 .home-container.light-mode {
-  background: white; /* Light background when light mode is toggled */
-  color: black; /* Text color for light mode */
+  background: white;
+  color: black;
 }
 
 /* Home content */
 .home-content {
   position: relative;
   z-index: 1;
+  max-width: 800px;
+  padding: 0 20px;
 }
 
 /* Hero Title */
@@ -31,6 +34,13 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Hero Icon */
+.hero-icon {
+  font-size: 2rem;
+  color: #00f050;
 }
 
 /* Hero Subtitle */
@@ -38,29 +48,24 @@
   font-size: 1.2rem;
   margin-top: 10px;
   color: #aaa;
-  display: inline-flex; /* Use inline-flex to align text in a row */
-  align-items: center; /* Vertically center align the text */
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem; /* Prevent layout shift during text transition */
 }
 
-.hero-subtitle.light-mode {
-  color: #333; /* Darker subtitle text in light mode */
+.home-container.light-mode .hero-subtitle {
+  color: #333;
 }
 
 /* Fixed "I am a" text */
 .fixed-text {
-  display: inline; /* Ensure it stays on the same line as the TextTransition */
+  display: inline;
   margin-right: 10px;
 }
-
 
 .highlight {
   color: #00f050;
 }
-
-.highlight.light-mode {
-  color: #00f050; /* Accent color for light mode */
-}
-
 
 /* Right-side Experience Section */
 .experience-section {
@@ -78,7 +83,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: none; /* Remove background */
   padding: 10px 20px;
   border-radius: 10px;
 }
@@ -86,7 +90,7 @@
 .experience-number {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #00f050; /* Green color */
+  color: #00f050;
 }
 
 .experience-text {
@@ -94,3 +98,112 @@
   color: #aaa;
 }
 
+.home-container.light-mode .experience-text {
+  color: #666;
+}
+
+/* Stars Animation */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 5s infinite;
+}
+
+.home-container.light-mode .star {
+  background: #00f050;
+  opacity: 0.5;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .experience-section {
+    right: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .hero-icon {
+    margin-top: 10px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    flex-direction: column;
+  }
+  
+  .fixed-text {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+  
+  .experience-section {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 30px;
+  }
+  
+  .experience-item {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .experience-section {
+    gap: 20px;
+  }
+  
+  .experience-number {
+    font-size: 1.3rem;
+  }
+  
+  .experience-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .home-container {
+    height: auto;
+    min-height: 100vh;
+    padding: 100px 20px 60px;
+  }
+}

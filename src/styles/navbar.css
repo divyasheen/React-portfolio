@@ -9,28 +9,32 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 1000; 
+  z-index: 1000;
+  overflow: hidden;
 }
 
 /* Light Mode Styling */
 .navContainer.light-mode {
   background-color: white;
 }
+
 .navbar {
   display: flex;
   align-items: center;
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
   justify-content: space-between;
-  position: relative; 
+  position: relative;
 }
 
 /* Logo */
 .nav-logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color:#00F050;
+  color: #00F050;
   text-decoration: none;
+  z-index: 1001; /* Ensure logo stays above mobile menu */
 }
 
 /* Navigation Links */
@@ -56,7 +60,7 @@
 .nav-link:hover,
 .nav-link.active {
   color: #00F050;
-  transform: scale(1.1); /* Slight hover effect */
+  transform: scale(1.1);
 }
 
 /* Light Mode Styles */
@@ -68,6 +72,7 @@
 .navContainer.light-mode .nav-link.active {
   color: #00F050;
 }
+
 .theme-toggle {
   cursor: pointer;
   font-size: 1.5rem;
@@ -76,23 +81,96 @@
   color: white;
   transition: color 0.3s ease;
   padding: 0.5rem;
-
-  /* Fix positioning */
-  position: absolute;
-  top: 50%;
-  left: 85rem; 
-  transform: translateY(-50%);
+  position: relative;
+  margin-left: auto; /* Better positioning */
+  z-index: 1001; /* Keep above mobile menu */
 }
 
 .theme-toggle:hover {
-  color: #00F050
+  color: #00F050;
 }
 
 .navContainer.light-mode .theme-toggle {
   color: black;
 }
 
-.light-mode {
-  background-color: white;
+.navContainer.light-mode .theme-toggle:hover {
+  color: #00F050;
+}
+
+/* Mobile Menu Button (Hidden by default) */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.navContainer.light-mode .mobile-menu-btn {
   color: black;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .theme-toggle {
+    position: static;
+    transform: none;
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: #121212;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+
+  .navContainer.light-mode .nav-links {
+    background-color: white;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    order: 1;
+  }
+
+  .nav-logo {
+    order: 0;
+  }
+
+  .theme-toggle {
+    order: 2;
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navContainer {
+    padding: 1rem;
+  }
+
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    width: 80%;
+  }
 }

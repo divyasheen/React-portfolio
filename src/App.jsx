@@ -16,8 +16,14 @@ function App() {
 
   const toggleTheme = () => {
     setDarkMode((prevMode) => !prevMode);
+    
+    // Fix scrollbar issue by ensuring consistent body overflow settings
+    document.documentElement.style.overflow = "hidden"; // Prevent flickering scrollbars
+    document.body.style.overflowY = "auto"; // Ensure only one vertical scrollbar
   };
-
+  
+  
+  
   const stars = Array.from({ length: 100 }).map((_, i) => (
     <div
       key={i}

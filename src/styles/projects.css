@@ -1,9 +1,10 @@
+/* Projects Container */
 .projects-container {
   padding: 50px;
   text-align: center;
   background-color: #f4f4f4;
   color: #333;
-  overflow: hidden; /* Prevent unwanted scrolling */
+  overflow: hidden;
   width: 100%;
   position: relative;
 }
@@ -23,8 +24,11 @@
   display: flex;
   gap: 20px;
   padding: 20px;
-  overflow: hidden; /* Ensure no vertical overflow */
-  width: 100%;
+  width: max-content;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  white-space: nowrap;
 }
 
 /* Animation for smooth horizontal scrolling */
@@ -38,7 +42,7 @@
 }
 
 .projects-grid.scroll-active {
-  animation: scrollProjects 30s linear infinite; /* Adjust speed */
+  animation: scrollProjects 15s linear infinite;
 }
 
 .project-card {
@@ -47,8 +51,9 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 300px;
-  flex-shrink: 0; /* Prevent cards from shrinking */
+  flex-shrink: 0;
   transition: transform 0.3s ease-in-out;
+  position: relative;
 }
 
 .project-card:hover {
@@ -69,7 +74,7 @@
 
 .project-card .project-details {
   position: absolute;
-  bottom: -100%; /* Hide details initially */
+  bottom: -100%;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.8);
@@ -79,22 +84,19 @@
 }
 
 .project-card:hover .project-details {
-  bottom: 0; /* Slide up on hover */
+  bottom: 0;
 }
 
-/* Project Title */
 .project-card .project-details h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
-/* Project Description */
 .project-card .project-details p {
   font-size: 1rem;
   margin-bottom: 15px;
 }
 
-/* Project Link */
 .project-card .project-link {
   font-size: 1rem;
   color: #00f050;
@@ -120,16 +122,120 @@
   color: #00f050;
 }
 
-.projects-container.dark-mode .project-link:hover {
-  color: #00f050;
-}
-
-/* Hide scrollbar for projects grid */
+/* Hide scrollbar */
 .projects-grid::-webkit-scrollbar {
   display: none;
 }
 
-.projects-grid {
-  -ms-overflow-style: none; /* Hide scrollbar in Edge */
-  scrollbar-width: none; /* Hide scrollbar in Firefox */
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .projects-container {
+    padding: 40px 30px;
+  }
+  
+  .projects-grid {
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .project-card {
+    width: 280px;
+  }
+  
+  .project-card .project-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    padding: 30px 20px;
+  }
+  
+  .projects-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .projects-grid {
+    animation: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .project-card {
+    width: 250px;
+    scroll-snap-align: center;
+  }
+  
+  .project-card .project-details {
+    padding: 15px;
+  }
+  
+  .project-card .project-details h3 {
+    font-size: 1.3rem;
+  }
+  
+  .project-card .project-details p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-container {
+    padding: 25px 15px;
+  }
+  
+  .projects-container h2 {
+    font-size: 1.8rem;
+  }
+  
+  .projects-grid {
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .project-card {
+    width: 220px;
+  }
+  
+  .project-card .project-image {
+    height: 150px;
+  }
+  
+  .project-card .project-details {
+    padding: 10px;
+  }
+  
+  .project-card .project-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  
+  .project-card .project-details p {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .project-card .project-link {
+    font-size: 0.9rem;
+  }
+}
+
+@media (hover: none) {
+  .project-card:hover {
+    transform: none;
+  }
+  
+  .project-card .project-details {
+    position: static;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .projects-container.dark-mode .project-details {
+    background: rgba(30, 30, 30, 0.8);
+  }
 }

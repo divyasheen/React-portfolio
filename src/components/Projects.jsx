@@ -21,7 +21,7 @@ function Projects({ darkMode }) {
     <section className={`projects-container ${darkMode ? "dark-mode" : "light-mode"}`}>
       <h2>My Projects</h2>
       <div className="projects-grid" ref={projectsGridRef}>
-        {projects.concat(projects).map((project, index) => (
+        {projects.map((project, index) => (
           <div className="project-card" key={index}>
             <img src={project.image} alt={project.title} className="project-image" />
             <div className="project-details">
