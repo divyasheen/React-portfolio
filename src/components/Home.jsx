@@ -22,7 +22,7 @@ function Home({ darkMode }) {
     return () => clearInterval(interval);
   }, []);
 
-  const stars = Array.from({ length: 100 }).map((_, i) => (
+  const stars = Array.from({ length: 80 }).map((_, i) => (
     <div
       key={i}
       className={`star ${!darkMode ? "light-mode" : ""}`} // Apply light-mode class conditionally
@@ -57,7 +57,7 @@ function Home({ darkMode }) {
       {/* Right-side Experience Section */}
       <div className="experience-section">
         <div className="experience-item">
-          <span className="experience-number">2+</span>
+          <span className="experience-number">3+</span>
           <span className="experience-text">Years Experience</span>
         </div>
         <div className="experience-item">
