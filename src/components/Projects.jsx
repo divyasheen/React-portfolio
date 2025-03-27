@@ -15,43 +15,50 @@ function Projects({ darkMode }) {
   ];
 
   return (
-    <section className={`projects-container ${darkMode ? "dark-mode" : "light-mode"}`}>
+    <section className={`projects-container ${darkMode ? "dark-mode" : "light-mode"}`} id="projects">
       <h2>My Projects</h2>
-      <Swiper
-  spaceBetween={20}
-  slidesPerView={1}
-  breakpoints={{
-    768: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 },
-  }}
-  autoplay={{ delay: 2500, disableOnInteraction: false }}
-  pagination={{ clickable: true }}
-  navigation
-  grabCursor={true}  // Makes it clear that slides can be dragged
-  style={{ paddingBottom: "40px" }} // Adds spacing for pagination
->
-  {projects.map((project, index) => (
-    <SwiperSlide key={index}>
-      <div className="project-card">
-        <img src={project.image} alt={project.title} className="project-image" />
-        <div className="project-details">
-          <h3>{project.title}</h3>
-          <p>{project.description}</p>
-          <a
-            href={project.link}
-            className="project-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()} // Prevents Swiper from blocking clicks
-          >
-            View Project
-          </a>
-        </div>
+      <div className="swiper-container-wrapper">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={1}
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          navigation
+          grabCursor={true}
+          className="custom-swiper"
+        >
+          {projects.map((project, index) => (
+            <SwiperSlide key={index}>
+              <div className="project-card">
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="project-image"
+                  loading="lazy"
+                />
+                <div className="project-details">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <a
+                    href={project.link}
+                    className="project-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    View Project
+                  </a>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-    </SwiperSlide>
-  ))}
-</Swiper>
-
     </section>
   );
 }
