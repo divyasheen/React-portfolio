@@ -10,8 +10,7 @@ function Projects({ darkMode }) {
   const projects = [
     { title: "To-Do List App", description: "Manage tasks efficiently.", link: "https://project-to-do-list-u8kr.onrender.com/", image: "../todo.png" },
     { title: "My Portfolio", description: "A personal portfolio.", link: "https://react-portfolio-d647.onrender.com/", image: "../portfolio.png" },
-    { title: "Sassy Website", description: "A stylish SCSS site.", link: "https://divyasheen.github.io/Sassy-website/", image: "../sassywebsite.png" },
-    { title: "Academic Project", description: "A Python-based project.", link: "#", image: "../academic.png" },
+    { title: "Pokedex", description: "Pokedex using Next.js", link: "https://pokedex-z0p8.onrender.com", image: "../pokedex.png" },
   ];
 
   return (

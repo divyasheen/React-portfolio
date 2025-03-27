@@ -53,14 +53,12 @@ function About({ darkMode }) {
           <span className="skill-tag">HTML</span>
           <span className="skill-tag">CSS/SCSS</span>
           <span className="skill-tag">Angular</span>
-          <span className="skill-tag">React</span>
+          <span className="skill-tag">React/NextJS</span>
           <span className="skill-tag">MongoDB</span>
           <span className="skill-tag">Express</span>
           <span className="skill-tag">Git</span>
           <span className="skill-tag">Bootstrap</span>
           <span className="skill-tag">Figma</span>
-          <span className="skill-tag">Sonar</span>
-          <span className="skill-tag">Jira</span>
         </div>
       </div>
     </section>
