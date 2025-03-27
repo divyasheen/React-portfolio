@@ -17,8 +17,7 @@ function Navbar({ darkMode, toggleTheme }) {
   return (
     <div className={`navContainer ${darkMode ? "dark-mode" : "light-mode"}`}>
       <div className="navbar">
-        <span className="nav-logo">{"<DIVYA MARIYA RAPHY/>"}</span>
-
+        
         {/* Mobile Menu Button */}
         <button 
           className="mobile-menu-btn" 
