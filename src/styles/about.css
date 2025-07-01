@@ -155,7 +155,7 @@
 }
 
 .skill-tag:hover {
-  background-color: #00F050;
+  background-color: grey;
   transform: translateY(-2px);
 }
 
@@ -164,7 +164,7 @@
 }
 
 .about-container.light-mode .skill-tag:hover {
-  background-color: #00F050;
+  background-color: grey;
 }
 
 /* Responsive Media Queries */

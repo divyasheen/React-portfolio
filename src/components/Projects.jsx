@@ -9,7 +9,7 @@ import "../styles/projects.css";
 function Projects({ darkMode }) {
   const projects = [
     { title: "To-Do List App", description: "Manage tasks efficiently.", link: "https://project-to-do-list-u8kr.onrender.com/", image: "../todo.png" },
-    { title: "My Portfolio", description: "A personal portfolio.", link: "https://react-portfolio-d647.onrender.com/", image: "../portfolio.png" },
+    { title: "Coderealm", description: "AI-integrated Coding Platform", link: "https://coderealm-e7af.onrender.com/", image: "../image.png" },
     { title: "Pokedex", description: "Pokedex using Next.js", link: "https://pokedex-z0p8.onrender.com", image: "../pokedex.png" },
   ];
 

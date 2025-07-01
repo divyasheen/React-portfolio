@@ -37,14 +37,7 @@ function Navbar({ darkMode, toggleTheme }) {
           <button className="nav-link" onClick={() => handleScroll("projects")}>
             Projects
           </button>
-          <a 
-            href="../DCIUPDATEDCV.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="nav-link"
-          >
-            Resume
-          </a>
+          
           <button className="nav-link" onClick={() => handleScroll("contact")}>
             Contact
           </button>
